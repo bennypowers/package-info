@@ -1,0 +1,225 @@
+{
+  "version": "experimental",
+  "tags": [
+    {
+      "name": "package-author",
+      "path": "./package-author.ts",
+      "attributes": [
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "email",
+          "type": "string"
+        },
+        {
+          "name": "url",
+          "type": "string"
+        }
+      ],
+      "properties": [
+        {
+          "name": "is",
+          "type": "\"package-author\"",
+          "default": "\"package-author\""
+        },
+        {
+          "name": "styles",
+          "type": "CSSResult",
+          "default": "\"style\""
+        },
+        {
+          "name": "name",
+          "attribute": "name",
+          "type": "string"
+        },
+        {
+          "name": "email",
+          "attribute": "email",
+          "type": "string"
+        },
+        {
+          "name": "url",
+          "attribute": "url",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "package-info",
+      "path": "./package-info.ts",
+      "attributes": [
+        {
+          "name": "collapsible",
+          "description": "When true, only the name is initially shown",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "name",
+          "description": "Package Name",
+          "type": "string"
+        },
+        {
+          "name": "version",
+          "description": "Package Version",
+          "type": "string"
+        },
+        {
+          "name": "description",
+          "description": "Package Description",
+          "type": "string"
+        },
+        {
+          "name": "homepage",
+          "description": "Package Homepage",
+          "type": "string"
+        },
+        {
+          "name": "license",
+          "description": "SPDX License Name",
+          "type": "string"
+        },
+        {
+          "name": "author",
+          "description": "Package Author",
+          "type": "Author"
+        },
+        {
+          "name": "repository",
+          "description": "Package Repository",
+          "type": "Repository"
+        }
+      ],
+      "properties": [
+        {
+          "name": "is",
+          "type": "\"package-info\"",
+          "default": "\"package-info\""
+        },
+        {
+          "name": "styles",
+          "type": "CSSResult",
+          "default": "\"style\""
+        },
+        {
+          "name": "collapsible",
+          "attribute": "collapsible",
+          "description": "When true, only the name is initially shown",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "name",
+          "attribute": "name",
+          "description": "Package Name",
+          "type": "string"
+        },
+        {
+          "name": "version",
+          "attribute": "version",
+          "description": "Package Version",
+          "type": "string"
+        },
+        {
+          "name": "description",
+          "attribute": "description",
+          "description": "Package Description",
+          "type": "string"
+        },
+        {
+          "name": "homepage",
+          "attribute": "homepage",
+          "description": "Package Homepage",
+          "type": "string"
+        },
+        {
+          "name": "license",
+          "attribute": "license",
+          "description": "SPDX License Name",
+          "type": "string"
+        },
+        {
+          "name": "licenseText",
+          "description": "License Text. Maybe also be slotted into `license` slot",
+          "type": "string"
+        },
+        {
+          "name": "contributors",
+          "description": "Package Contributors",
+          "type": "Author[]"
+        },
+        {
+          "name": "maintainers",
+          "description": "Package Maintainers",
+          "type": "Author[]"
+        },
+        {
+          "name": "author",
+          "attribute": "author",
+          "description": "Package Author",
+          "type": "Author"
+        },
+        {
+          "name": "repository",
+          "attribute": "repository",
+          "description": "Package Repository",
+          "type": "Repository"
+        }
+      ],
+      "slots": [
+        {
+          "name": "author",
+          "description": "Software Author. `<package-author>` element preferred"
+        },
+        {
+          "name": "description",
+          "description": "Package description. takes a `<p>` element"
+        },
+        {
+          "name": "maintainer",
+          "description": "Software maintainers. takes a `<package-author>` element or `<ol>` of such"
+        },
+        {
+          "name": "contributor",
+          "description": "Software contributors. takes a `<package-author>` element of `<ol>` of such"
+        },
+        {
+          "name": "license",
+          "description": "License. e.g. `<pre>` or formatted license HTML"
+        }
+      ],
+      "cssParts": [
+        {
+          "name": "details",
+          "description": "main details widget"
+        },
+        {
+          "name": "summary",
+          "description": "main details summary widget"
+        },
+        {
+          "name": "name",
+          "description": "package name"
+        },
+        {
+          "name": "license-badge",
+          "description": "license ID badge"
+        },
+        {
+          "name": "description",
+          "description": "package description"
+        },
+        {
+          "name": "properties",
+          "description": "`<DL>` of license properties"
+        },
+        {
+          "name": "license-text",
+          "description": "default `license` slot content (`<pre>`)"
+        }
+      ]
+    }
+  ]
+}

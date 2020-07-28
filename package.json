@@ -1,0 +1,29 @@
+{
+  "name": "@power-elements/package-info",
+  "description": "Display Information about an NPM package",
+  "license": "ISC",
+  "version": "0.0.1",
+  "main": "index.js",
+  "type": "module",
+  "dependencies": {
+    "@open-wc/lit-helpers": "^0.3.11",
+    "lit-element": "^2.3.1"
+  },
+  "devDependencies": {
+    "@open-wc/testing": "^2.5.19",
+    "@pwrs/eslint-config": "0.0.7",
+    "es-dev-server-import-css": "^2.1.0",
+    "eslint": "^7.5.0",
+    "npm-check": "^5.9.2",
+    "npm-run-all": "^4.1.5",
+    "postcss-clean": "^1.1.0",
+    "rollup": "^2.22.1",
+    "rollup-plugin-analyzer": "^3.3.0",
+    "rollup-plugin-lit-css": "^2.0.4",
+    "rollup-plugin-styles": "^3.10.0",
+    "stylelint": "^13.6.1",
+    "stylelint-config-standard": "^20.0.0",
+    "typescript": "^3.9.7",
+    "web-component-analyzer": "^1.1.6"
+  }
+}
