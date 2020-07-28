@@ -5,6 +5,11 @@
   "version": "0.0.1",
   "main": "index.js",
   "type": "module",
+  "files": [
+    "*.js",
+    "*.map",
+    "*.d.ts"
+  ],
   "dependencies": {
     "@open-wc/lit-helpers": "^0.3.11",
     "lit-element": "^2.3.1"
