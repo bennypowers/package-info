@@ -2,7 +2,7 @@
   "name": "@power-elements/package-info",
   "description": "Display Information about an NPM package",
   "license": "ISC",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "index.js",
   "type": "module",
   "customElements": "custom-elements.json",
