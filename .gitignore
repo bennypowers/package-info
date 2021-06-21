@@ -3,4 +3,5 @@
 *.map
 *.tgz
 !custom-elements-manifest.config.js
+!scripts/*
 node_modules
