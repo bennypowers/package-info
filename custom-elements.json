@@ -1,225 +1,469 @@
 {
-  "version": "experimental",
-  "tags": [
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
     {
-      "name": "package-author",
-      "path": "./package-author.ts",
-      "attributes": [
+      "kind": "javascript-module",
+      "path": "index.js",
+      "declarations": [],
+      "exports": [
         {
-          "name": "name",
-          "type": "string"
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./package-author"
+          }
         },
         {
-          "name": "email",
-          "type": "string"
-        },
-        {
-          "name": "url",
-          "type": "string"
-        }
-      ],
-      "properties": [
-        {
-          "name": "is",
-          "type": "\"package-author\"",
-          "default": "\"package-author\""
-        },
-        {
-          "name": "styles",
-          "type": "CSSResult",
-          "default": "\"style\""
-        },
-        {
-          "name": "name",
-          "attribute": "name",
-          "type": "string"
-        },
-        {
-          "name": "email",
-          "attribute": "email",
-          "type": "string"
-        },
-        {
-          "name": "url",
-          "attribute": "url",
-          "type": "string"
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./package-info"
+          }
         }
       ]
     },
     {
-      "name": "package-info",
-      "path": "./package-info.ts",
-      "attributes": [
+      "kind": "javascript-module",
+      "path": "licenses.js",
+      "declarations": [],
+      "exports": [
         {
-          "name": "collapsible",
-          "description": "When true, only the name is initially shown",
-          "type": "boolean",
-          "default": "false"
-        },
-        {
-          "name": "name",
-          "description": "Package Name",
-          "type": "string"
-        },
-        {
-          "name": "version",
-          "description": "Package Version",
-          "type": "string"
-        },
-        {
-          "name": "description",
-          "description": "Package Description",
-          "type": "string"
-        },
-        {
-          "name": "homepage",
-          "description": "Package Homepage",
-          "type": "string"
-        },
-        {
-          "name": "license",
-          "description": "SPDX License Name",
-          "type": "string"
-        },
-        {
-          "name": "author",
-          "description": "Package Author",
-          "type": "Author"
-        },
-        {
-          "name": "repository",
-          "description": "Package Repository",
-          "type": "Repository"
-        }
-      ],
-      "properties": [
-        {
-          "name": "is",
-          "type": "\"package-info\"",
-          "default": "\"package-info\""
-        },
-        {
-          "name": "styles",
-          "type": "CSSResult",
-          "default": "\"style\""
-        },
-        {
-          "name": "collapsible",
-          "attribute": "collapsible",
-          "description": "When true, only the name is initially shown",
-          "type": "boolean",
-          "default": "false"
-        },
-        {
-          "name": "name",
-          "attribute": "name",
-          "description": "Package Name",
-          "type": "string"
-        },
-        {
-          "name": "version",
-          "attribute": "version",
-          "description": "Package Version",
-          "type": "string"
-        },
-        {
-          "name": "description",
-          "attribute": "description",
-          "description": "Package Description",
-          "type": "string"
-        },
-        {
-          "name": "homepage",
-          "attribute": "homepage",
-          "description": "Package Homepage",
-          "type": "string"
-        },
-        {
-          "name": "license",
-          "attribute": "license",
-          "description": "SPDX License Name",
-          "type": "string"
-        },
-        {
-          "name": "licenseText",
-          "description": "License Text. Maybe also be slotted into `license` slot",
-          "type": "string"
-        },
-        {
-          "name": "contributors",
-          "description": "Package Contributors",
-          "type": "Author[]"
-        },
-        {
-          "name": "maintainers",
-          "description": "Package Maintainers",
-          "type": "Author[]"
-        },
-        {
-          "name": "author",
-          "attribute": "author",
-          "description": "Package Author",
-          "type": "Author"
-        },
-        {
-          "name": "repository",
-          "attribute": "repository",
-          "description": "Package Repository",
-          "type": "Repository"
-        }
-      ],
-      "slots": [
-        {
-          "name": "author",
-          "description": "Software Author. `<package-author>` element preferred"
-        },
-        {
-          "name": "description",
-          "description": "Package description. takes a `<p>` element"
-        },
-        {
-          "name": "maintainer",
-          "description": "Software maintainers. takes a `<package-author>` element or `<ol>` of such"
-        },
-        {
-          "name": "contributor",
-          "description": "Software contributors. takes a `<package-author>` element of `<ol>` of such"
-        },
-        {
-          "name": "license",
-          "description": "License. e.g. `<pre>` or formatted license HTML"
-        }
-      ],
-      "cssParts": [
-        {
-          "name": "details",
-          "description": "main details widget"
-        },
-        {
-          "name": "summary",
-          "description": "main details summary widget"
-        },
-        {
-          "name": "name",
-          "description": "package name"
-        },
-        {
-          "name": "license-badge",
-          "description": "license ID badge"
-        },
-        {
-          "name": "description",
-          "description": "package description"
-        },
-        {
-          "name": "properties",
-          "description": "`<DL>` of license properties"
-        },
-        {
-          "name": "license-text",
-          "description": "default `license` slot content (`<pre>`)"
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "licenses.js"
+          }
         }
       ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "package-author.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Displays a package's author",
+          "name": "PackageAuthor",
+          "cssProperties": [
+            {
+              "description": "- link color",
+              "name": "--software-license-link-color"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "is",
+              "static": true,
+              "default": "package-author"
+            },
+            {
+              "kind": "field",
+              "name": "name",
+              "type": {
+                "text": "string"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "email",
+              "type": {
+                "text": "string"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "url",
+              "type": {
+                "text": "string"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "name"
+            },
+            {
+              "name": "email",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "email"
+            },
+            {
+              "name": "url",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "url"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement"
+          },
+          "tagName": "package-author",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "PackageAuthor",
+          "declaration": {
+            "name": "PackageAuthor",
+            "module": "package-author.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "package-author",
+          "declaration": {
+            "name": "PackageAuthor",
+            "module": "package-author.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "package-dependencies.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Display the dependencies of a package in HTML\n\n```html\n<package-dependencies src=\"dependencies.json\"></package-dependencies>\n```\n\n```html\n<package-dependencies>\n  <script type=\"application/json\" src=\"dependencies.json\"></script>\n</package-dependencies>\n```",
+          "name": "PackageDependencies",
+          "cssParts": [
+            {
+              "description": "- the element for a specific dependency",
+              "name": "info"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "is",
+              "static": true,
+              "default": "package-dependencies"
+            },
+            {
+              "kind": "field",
+              "name": "src",
+              "description": "URL to the dependencies JSON file",
+              "default": ""
+            },
+            {
+              "kind": "field",
+              "name": "dependencies",
+              "type": {
+                "text": "Package[]"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "fetch",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "Promise<void>"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "src",
+                  "default": "this.querySelector<HTMLScriptElement>('script[type=\"application/json\"]')?.src"
+                }
+              ]
+            }
+          ],
+          "attributes": [
+            {
+              "name": "src",
+              "description": "URL to the dependencies JSON file",
+              "default": "",
+              "fieldName": "src"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement"
+          },
+          "tagName": "package-dependencies",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "PackageDependencies",
+          "declaration": {
+            "name": "PackageDependencies",
+            "module": "package-dependencies.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "package-dependencies",
+          "declaration": {
+            "name": "PackageDependencies",
+            "module": "package-dependencies.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "package-info.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Displays a software package and it's license.\n\nWell suited for use with [`rollup-plugin-license`](https://npm.im/rollup-plugin-license)",
+          "name": "PackageInfo",
+          "cssParts": [
+            {
+              "description": "- main details widget",
+              "name": "details"
+            },
+            {
+              "description": "- main details summary widget",
+              "name": "summary"
+            },
+            {
+              "description": "- package name",
+              "name": "name"
+            },
+            {
+              "description": "- license ID badge",
+              "name": "license-badge"
+            },
+            {
+              "description": "- package description",
+              "name": "description"
+            },
+            {
+              "description": "- `<DL>` of license properties",
+              "name": "properties"
+            },
+            {
+              "description": "- default `license` slot content (`<pre>`)",
+              "name": "license-text"
+            }
+          ],
+          "slots": [
+            {
+              "description": "- Software Author. `<package-author>` element preferred",
+              "name": "author"
+            },
+            {
+              "description": "- Package description. takes a `<p>` element",
+              "name": "description"
+            },
+            {
+              "description": "- Software maintainers. takes a `<package-author>` element or `<ol>` of such",
+              "name": "maintainer"
+            },
+            {
+              "description": "- Software contributors. takes a `<package-author>` element of `<ol>` of such",
+              "name": "contributor"
+            },
+            {
+              "description": "- License. e.g. `<pre>` or formatted license HTML",
+              "name": "license"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "is",
+              "static": true,
+              "default": "package-info"
+            },
+            {
+              "kind": "field",
+              "name": "collapsible",
+              "description": "When true, only the name is initially shown"
+            },
+            {
+              "kind": "field",
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "description": "Package Name"
+            },
+            {
+              "kind": "field",
+              "name": "version",
+              "type": {
+                "text": "string"
+              },
+              "description": "Package Version"
+            },
+            {
+              "kind": "field",
+              "name": "description",
+              "type": {
+                "text": "string"
+              },
+              "description": "Package Description"
+            },
+            {
+              "kind": "field",
+              "name": "homepage",
+              "type": {
+                "text": "string"
+              },
+              "description": "Package Homepage"
+            },
+            {
+              "kind": "field",
+              "name": "license",
+              "type": {
+                "text": "string"
+              },
+              "description": "SPDX License Name"
+            },
+            {
+              "kind": "field",
+              "name": "licenseText",
+              "type": {
+                "text": "string"
+              },
+              "description": "License Text. Maybe also be slotted into `license` slot"
+            },
+            {
+              "kind": "field",
+              "name": "contributors",
+              "type": {
+                "text": "Author[]"
+              },
+              "description": "Package Contributors"
+            },
+            {
+              "kind": "field",
+              "name": "maintainers",
+              "type": {
+                "text": "Author[]"
+              },
+              "description": "Package Maintainers"
+            },
+            {
+              "kind": "field",
+              "name": "author",
+              "type": {
+                "text": "Author"
+              },
+              "description": "Package Author"
+            },
+            {
+              "kind": "field",
+              "name": "repository",
+              "type": {
+                "text": "Repository"
+              },
+              "description": "Package Repository"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "collapsible",
+              "description": "When true, only the name is initially shown",
+              "fieldName": "collapsible"
+            },
+            {
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "description": "Package Name",
+              "fieldName": "name"
+            },
+            {
+              "name": "version",
+              "type": {
+                "text": "string"
+              },
+              "description": "Package Version",
+              "fieldName": "version"
+            },
+            {
+              "name": "description",
+              "type": {
+                "text": "string"
+              },
+              "description": "Package Description",
+              "fieldName": "description"
+            },
+            {
+              "name": "homepage",
+              "type": {
+                "text": "string"
+              },
+              "description": "Package Homepage",
+              "fieldName": "homepage"
+            },
+            {
+              "name": "license",
+              "type": {
+                "text": "string"
+              },
+              "description": "SPDX License Name",
+              "fieldName": "license"
+            },
+            {
+              "name": "author",
+              "type": {
+                "text": "Author"
+              },
+              "description": "Package Author",
+              "fieldName": "author"
+            },
+            {
+              "name": "repository",
+              "type": {
+                "text": "Repository"
+              },
+              "description": "Package Repository",
+              "fieldName": "repository"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement"
+          },
+          "tagName": "package-info",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "PackageInfo",
+          "declaration": {
+            "name": "PackageInfo",
+            "module": "package-info.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "package-info",
+          "declaration": {
+            "name": "PackageInfo",
+            "module": "package-info.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "scripts/docs.js",
+      "declarations": [],
+      "exports": []
     }
   ]
 }

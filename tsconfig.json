@@ -2,7 +2,8 @@
   "files": [
     "index.ts",
     "package-author.ts",
-    "package-info.ts"
+    "package-info.ts",
+    "package-dependencies.ts"
   ],
   "compilerOptions": {
     "experimentalDecorators": true,

@@ -1,12 +1,24 @@
-import { customElement, LitElement, property, TemplateResult, html } from "lit-element";
+import { LitElement, TemplateResult, css, html } from 'lit';
+import { customElement, property } from 'lit/decorators.js';
 
-import style from './package-author.css';
-
+/**
+ * Displays a package's author
+ * @cssprop --software-license-link-color - link color
+ */
 @customElement('package-author')
-export class SoftwareAuthor extends LitElement {
+export class PackageAuthor extends LitElement {
   static readonly is = 'package-author';
 
-  static readonly styles = style;
+  static readonly styles = css`
+    :host {
+      display: inline-flex;
+      gap: 4px;
+    }
+
+    a {
+      color: var(--software-license-link-color, currentColor);
+    }
+  `;
 
   @property({ reflect: true }) name: string;
 

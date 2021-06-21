@@ -1,11 +1,12 @@
-import { customElement, LitElement, property, TemplateResult, html } from 'lit-element';
+import type { TemplateResult } from 'lit';
+
+import { LitElement, css, html } from 'lit';
+import { customElement, property } from 'lit/decorators.js';
 import { spread } from '@open-wc/lit-helpers';
 
-import style from './package-info.css';
+import './package-author.js';
 
-import './package-author';
-
-import LICENSES from './licenses';
+import LICENSES from './licenses.js';
 
 export interface AuthorDescriptor {
   name: string;
@@ -42,11 +43,11 @@ function isRepositoryDescriptor(repository: Repository): repository is Repositor
 }
 
 function parseRepositoryString(repository: string): RepositoryDescriptor {
-  const r = repository ?? ''
-  const matches = r.match(/([\w\-]+)\/([\w\-]+)/)
+  const r = repository ?? '';
+  const matches = r.match(/([\w\-]+)\/([\w\-]+)/);
   const type = repository && 'git';
   const url = matches ? `git+https://github.com/${matches[1]}/${matches[2]}` : r;
-  return { type, url }
+  return { type, url };
 }
 
 function parseRepository(repository: Repository): RepositoryDescriptor {
@@ -86,7 +87,67 @@ function ensureAuthor(author: Author): AuthorDescriptor {
 export class PackageInfo extends LitElement {
   static readonly is = 'package-info';
 
-  static readonly styles = style;
+  static readonly styles = css`
+    :host {
+      display: block;
+      list-style: unset;
+      padding-left: 2rem;
+    }
+
+    [part="summary"] {
+      display: flex;
+      align-items: center;
+      margin-left: -2rem;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: var(--package-info-name-font-size, initial);
+    }
+
+    a {
+      color: var(--software-license-link-color, currentColor);
+    }
+
+    dl {
+      display: grid;
+      grid-template-columns: min-content 1fr;
+    }
+
+    dd {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    dl ol,
+    dl ::slotted(ol) {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    pre,
+    article ::slotted(pre) {
+      white-space: pre-wrap;
+    }
+
+    summary [part="license-badge"] {
+      border-radius: 12px;
+      text-decoration: none;
+      font-size: 11px;
+      border: 1px solid var(--license-badge-border-color, #9e9e9e); /* Grey 500 */
+      background-color: var(--license-badge-background-color, #eee); /* Grey 200 */
+      padding: 4px 6px;
+      margin-left: auto;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      summary [part="license-badge"] {
+        border: 1px solid var(--license-badge-border-color, #616161); /* Grey 700 */
+        background-color: var(--license-badge-background-color, #212121); /* Grey 900 */
+      }
+    }
+  `;
 
   /** When true, only the name is initially shown */
   @property({ type: Boolean, reflect: true }) collapsible = false;
@@ -142,22 +203,22 @@ export class PackageInfo extends LitElement {
 
     const hasMaintainers =
       !!_maintainers.length ||
-      !!this.querySelectorAll('[slot="maintainer"]').length
+      !!this.querySelectorAll('[slot="maintainer"]').length;
 
     const hasContributors =
       !!_contributors.length ||
-      !!this.querySelectorAll('[slot="contributor"]').length
+      !!this.querySelectorAll('[slot="contributor"]').length;
 
     const hasAuthor =
       !!this.author ||
-      !!this.querySelector('[slot="author"]')
+      !!this.querySelector('[slot="author"]');
 
     const hasRepository =
-      !!this.repository
+      !!this.repository;
 
     const hasLicenseText =
       !!this.licenseText ||
-      !!this.querySelector('[slot="license"]')
+      !!this.querySelector('[slot="license"]');
 
     const repoUrl =
       urlForRepository(repository);
@@ -177,7 +238,7 @@ export class PackageInfo extends LitElement {
       <details part="details">
         <summary part="summary">
           <h2 part="name">${name}</h2>
-          ${!license ? '': LICENSES.includes(license) ? html`
+          ${!license ? '' : LICENSES.includes(license) ? html`
           <a href="${licenseHref}" rel="noopener noreferrer" target="_blank" part="license-badge">
             ${license}
           </a>
@@ -248,6 +309,6 @@ export class PackageInfo extends LitElement {
           <slot name="license"><pre part="license-text">${licenseText}</pre></slot>
         </details>
       </details>
-    `
+    `;
   }
 }
