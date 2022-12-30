@@ -33,7 +33,7 @@
   "devDependencies": {
     "@custom-elements-manifest/analyzer": "^0.3.2",
     "@custom-elements-manifest/to-markdown": "^0.0.4",
-    "@open-wc/testing": "^2.5.33",
+    "@open-wc/testing": "^3.1.7",
     "@pwrs/eslint-config": "^0.0.21",
     "eslint": "^7.29.0",
     "npm-check": "^5.9.2",
